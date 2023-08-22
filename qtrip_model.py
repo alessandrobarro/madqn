@@ -4,33 +4,6 @@ import matplotlib.pyplot as plt
 import geopandas as gpd
 from shapely.geometry import Point, LineString
 
-'''
-**DEV-NOTES (17/08/2023)**
-    - Budget has been cancelled from being a component of the state, and from being a crucial part
-      for action choice and reward calculation. The algorithm needs to work without taking in consideration
-      the money factor (which will be a thing in the main real-time script), as accorded with the Q-Trip
-      founders. The list of cities should be provided from the user preferences, model prior features
-      and time.
-**DEV-NOTES (21/08/2023)**
-    - The model is finally able to converge by establishing a threshold on the MSE loss function during the
-      model's setup (test.py). The model seems to choose a city stochastically (the reward function has to be
-      carefully re-weighted), and the move_to_new_city() action is not even taken in consideration by an optimal
-      policy PI_opt.
-    - Need to check the desired_cities features since it is being incorrectly called in get_possible_actions()
-'''
-
-'''
-Example model usage
-
-agent = QLearningAgent(...)  (Initialize the agent)
-agent.setup_environment() (Initialise the Q-table)
-agent.train()  (Train the agent)
-optimal_policy = agent.get_optimal_policy()  (Get the optimal policy)
-total_reward = agent.evaluate_policy(optimal_policy)  (Evaluate the optimal policy)
-print("Total Reward:", total_reward)
-agent.visualize_route(optimal_policy)  (Visualize the optimal route)
-'''
-
 # Example City class. Nation example: Let Japan(self.cities) = [Tokyo = City(...), Osaka = City(...), ...]
 class City:
     """
@@ -51,9 +24,7 @@ class City:
 
 class QLearningAgent:
 
-####################################################################################################################
-#                                        Init and accessory methods                                                #
-####################################################################################################################
+### Init and helper functions
 
     def __init__(self, learning_rate, discount_factor, exploration_rate, exploration_decay, num_episodes, cities, total_time, user_prompted_preferences, desired_cities, transportation_scores):
         """
