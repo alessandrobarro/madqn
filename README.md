@@ -1,7 +1,3 @@
-# Qtrip MADQN
+# Qtrip MADQN - Abstract
 
-The presented Qtrip algorithm stands as a testament to the power and versatility of reinforcement learning techniques. Designed as a travel optimization tool, its foundational philosophy lies in tailoring travel recommendations to individual user preferences, hence revolutionizing the traditional approach to itinerary planning.
-
-Deep Q-Networks (DQN) have been instrumental in allowing the application of Q-learning to complex tasks with large state and action spaces by approximating the Q-value function with neural networks. When extending to the multi-agent domain, the scenario gets intricate due to the concurrent actions and strategies of multiple agents
-
-source code is not available in GitHub yet.
+Deep Q-Networks (DQN) have revolutionized the reinforcement learning landscape by using neural networks to approximate Q-value functions, addressing tasks with large state and action spaces. One of the most challenging computational optimization problems in computer science, especially in the realm of travel, is the Traveling Salesman Problem (TSP). This study introduces the Qtrip algorithm, which leverages DQNs to optimize travel itineraries. Unlike traditional methods, Qtrip can accommodate an infinite range of user- specific preferences, offering highly personalized travel routes. By integrating a multi-agent system, we tap into the collective intelligence of Multi-Agent Deep Q-Networks (MADQNs). Aggregating insights from multiple agents during training, the Qtrip algorithm improves robustness and accuracy in itinerary optimization. Our initial results highlight the potential of MADQNs not just for reimagining TSP formulations but also for innovating adaptive, user-focused travel optimization techniques in modern computing.
